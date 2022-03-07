@@ -1,0 +1,21 @@
+<h1>Book</h1>
+
+<ul>
+  <% @books.each do |book| %>
+    <li>
+        <%= book.book_name%>
+        <%= book.price%>
+        <%= book.author_name%>
+        <br>
+        <%= link_to'Edit', edit_book_path(book) %>
+       
+         
+        <%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+  
+</ul>
+
+<%= link_to "New Book", new_book_path %>
+
+
